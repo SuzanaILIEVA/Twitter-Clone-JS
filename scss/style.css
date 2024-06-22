@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 20px;
+  transition: all 0.3s;
+}
+
+.auth-page {
+  background: rgb(28, 27, 27);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.auth-page form {
+  background: black;
+  padding: 40px 80px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(63, 62, 62);
+  gap: 40px;
+  min-width: 400px;
+}
+.auth-page form div {
+  width: 100%;
+}
+.auth-page form input {
+  margin-top: 5px;
+}
+.auth-page form img {
+  width: 80px;
+}
+.auth-page form button {
+  border-radius: 10px;
+  width: 100%;
+}
+.auth-page form button:hover {
+  box-shadow: 2px 2px 10px gray;
+  scale: 0.96;
+  background: rgb(187, 183, 183);
+}
+.auth-page form .warning {
+  width: 100%;
+  background: #F8D7DA;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.loading-top, .info-area .top {
+  display: flex;
+  gap: 30px;
+  padding: 10px 20px;
+  align-items: center;
+  margin: 5px 20px;
+}
+.loading-top a i, .info-area .top a i {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  padding: 2px 8px;
+}
+.loading-top a i:hover, .info-area .top a i:hover {
+  background: rgb(36, 35, 35);
+  border-radius: 10px;
+}
+
+.info-area {
+  padding: 5px 20px;
+}
+.info-area .tweet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+.info-area .tweet-info img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.info-area .tweet-info .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-area .tweet-info .user button {
+  border-radius: 30px;
+}
+.info-area .tweet-info .user button:hover {
+  background: rgb(188, 185, 185);
+  box-shadow: 1px 1px 7px gray;
+}
+.info-area .tweet-info .user .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.info-area .tweet-info .user .info p {
+  color: rgb(106, 105, 105);
+  font-size: small;
+}
+.info-area .tweet-info .data {
+  display: flex;
+  white-space: nowrap;
+  gap: 25px;
+}
+.info-area .tweet-info .data p {
+  font-size: small;
+  color: gray;
+}
+.info-area .tweet-info .data p .count {
+  color: white;
+  font-weight: bold;
+}
+.info-area .tweet-info .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.info-area .tweet-info .buttons button {
+  background: none;
+  display: flex;
+  gap: 5px;
+  color: gray;
+  border-radius: 50px;
+}
+.info-area .tweet-info .buttons button:hover {
+  background: rgba(128, 128, 128, 0.192);
+}
+
+.news {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: start;
+  height: 100vh;
+  margin-right: 20px;
+}
+.news form {
+  background: rgba(44, 43, 43, 0.641);
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+.news form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 10px;
+}
+.news ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+}
+.news ul li {
+  background: rgba(44, 43, 43, 0.641);
+  border-radius: 6px;
+  padding: 10px;
+  list-style: none;
+  max-width: 400px;
+}
+
+.news-area {
+  overflow: auto;
+  height: auto;
+}
+.news-area::-webkit-scrollbar {
+  background: black;
+  width: 7px;
+}
+.news-area::-webkit-scrollbar-thumb {
+  background-color: rgb(55, 54, 54);
+  border-radius: 10px;
+}
+.news-area h3 {
+  font-size: medium;
+  margin-bottom: 10px;
+}
+.news-area li div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.news-area li div img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.news-area p {
+  margin-top: 5px;
+}
+.news-area .btnn {
+  display: flex;
+  justify-content: end;
+}
+.news-area .btnn button {
+  background: #1da1f2;
+  color: white;
+  border-radius: 40px;
+  font-size: smaller;
+}
+
+.user-page .top {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-page .top a {
+  color: white;
+}
+.user-page .top a i {
+  font-size: 25px;
+  font-weight: bold;
+}
+.user-page .user-page-info {
+  padding: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgb(68, 67, 67);
+}
+.user-page .user-page-info div {
+  display: flex;
+  gap: 40px;
+}
+.user-page .user-page-info div p {
+  color: gray;
+}
+.user-page .user-page-info div p span:nth-child(1) {
+  color: white;
+  font-weight: bold;
+}
+
+.banner {
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  max-height: 200px;
+}
+.banner .user-pp {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  bottom: -65px;
+  left: 30px;
+  border: 4px solid black;
+}
+
+.user-page .buttons {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.user-page .buttons i {
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 3px 8px;
+}
+.user-page .buttons button {
+  border-radius: 40px;
+}
+
+.feed {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+@media (min-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 600px 1fr;
+  }
+}
+
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+@media (min-width: 1300px) {
+  .left-bar {
+    align-items: end;
+    margin-right: 50px;
+  }
+}
+.left-bar img {
+  width: 80px;
+  margin-bottom: 8px;
+}
+@media (max-width: 1300px) {
+  .left-bar img {
+    width: 50px;
+  }
+}
+.left-bar nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+@media (max-width: 1300px) {
+  .left-bar nav {
+    align-items: end;
+  }
+}
+.left-bar nav .bi-three-dots {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0 5px;
+  font-size: small;
+}
+.left-bar nav a {
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  gap: 10px;
+  transition: all 0.4s;
+  color: white;
+  text-decoration: none;
+}
+.left-bar nav a:hover {
+  background: rgb(50, 50, 50);
+}
+.left-bar nav button {
+  background: #1da1f2;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.left-bar nav button:hover {
+  background: #287ef5;
+}
+@media (max-width: 1300px) {
+  .left-bar nav button {
+    border-radius: 50%;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar nav span {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar nav i {
+    font-size: 20px;
+  }
+}
+.left-bar .user-info {
+  display: flex;
+  gap: 10px;
+  padding: 20px 10px;
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info {
+    flex-direction: column;
+    align-items: end;
+  }
+}
+.left-bar .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.left-bar .user-info button {
+  background: rgb(66, 65, 65);
+  color: white;
+  border-radius: 5px;
+}
+.left-bar .user-info button:hover {
+  background: rgb(95, 94, 94);
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info button {
+    padding: 4px 10px;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info p {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info span {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info i {
+    font-size: 20px;
+  }
+}
+
+main {
+  border: 1px solid rgb(58, 57, 57);
+  overflow: auto;
+  height: 100vh;
+}
+main::-webkit-scrollbar {
+  background: black;
+  width: 7px;
+}
+main::-webkit-scrollbar-thumb {
+  background-color: rgb(55, 54, 54);
+  border-radius: 10px;
+}
+main header {
+  border-bottom: 1px solid rgb(58, 57, 57);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+main form {
+  border-bottom: 1px solid rgb(58, 57, 57);
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+}
+main form img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+main form .input-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main form .input-area input {
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 8px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+main form .input-area .buttons {
+  display: flex;
+  justify-content: end;
+}
+main form .input-area .buttons button {
+  background: #1da1f2;
+  color: white;
+  margin-top: 10px;
+  border-radius: 60px;
+  font-weight: bold;
+}
+main form .input-area .buttons button:hover {
+  background: #287ef5;
+}
+main .tweets-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(54, 53, 53);
+}
+.tweet:hover {
+  background: rgb(27, 27, 27);
+}
+.tweet a {
+  text-decoration: none;
+  color: white;
+}
+.tweet #profile-pic {
+  height: 50px;
+  border-radius: 50%;
+}
+.tweet .body {
+  width: 100%;
+}
+.tweet .body .user {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.tweet .body .user .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tweet .body .user .info p {
+  font-size: small;
+  color: gray;
+}
+.tweet .body .content {
+  text-decoration: none;
+  color: white;
+  max-width: 600px;
+  margin-top: 10px;
+}
+.tweet .body .content p {
+  margin-top: 15px;
+}
+.tweet .body .content img {
+  border-radius: 10px;
+  max-height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.tweet .body .content video {
+  max-height: 500px;
+  border-radius: 10px;
+}
+.tweet .body .buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  max-width: 600px;
+}
+.tweet .body .buttons button {
+  background: none;
+  display: flex;
+  gap: 5px;
+  color: gray;
+  border-radius: 50px;
+}
+.tweet .body .buttons button:hover {
+  background: rgba(128, 128, 128, 0.192);
+}
+
+@media (max-width: 1000px) {
+  .news {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

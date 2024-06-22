@@ -1,0 +1,100 @@
+.loading-top{
+    display: flex;
+     gap: 30px;
+     padding: 10px 20px;
+     align-items: center;
+     margin:  5px 20px;
+     a{
+        i{
+            font-size: 30px ;
+            font-weight: bold;
+            color: white;
+            padding: 2px 8px;
+            &:hover{
+                background: rgb(36, 35, 35);
+                border-radius: 10px;
+               
+            }
+        }
+     }
+}
+
+.info-area{ 
+  padding: 5px 20px;
+    .top{
+     @extend .loading-top;
+     }
+
+
+     .tweet-info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .user{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button{
+                border-radius: 30px;
+                &:hover{
+                    background: rgb(188, 185, 185);
+                    box-shadow: 1px 1px 7px gray;
+                }
+            }
+
+            .info{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                p{
+                    color: rgb(106, 105, 105);
+                    font-size: small;
+                }
+
+            }
+        }
+
+        .data{
+            display: flex;
+            white-space: nowrap;
+            gap: 25px;
+            p{
+                font-size: small;
+                color: gray;
+                .count{
+                    color: white;
+                    font-weight: bold;
+                }
+               
+            }
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+           
+            button{
+                background: none;
+                display: flex;
+                gap: 5px;
+                color: gray;
+                border-radius: 50px;
+                &:hover{
+                  background: rgba(128, 128, 128, 0.192);
+                }
+              }
+        }
+        
+    }  
+  }
+  
