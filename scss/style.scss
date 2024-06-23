@@ -5,7 +5,6 @@
 @import "news";
 @import "user";
 
-
 @mixin laptop {
   @media (max-width: 1300px) {
     @content;
@@ -30,12 +29,11 @@
   }
 }
 
-
 .feed {
   background: black;
   color: white;
   min-height: 100vh;
- overflow: hidden;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   font-family: "Poppins", sans-serif;
@@ -43,7 +41,7 @@
   @include tablet() {
     grid-template-columns: 1fr 3fr;
   }
-  @include min-tablet(){
+  @include min-tablet() {
     grid-template-columns: 1fr 600px 1fr;
   }
 }
@@ -52,8 +50,8 @@
   flex-direction: column;
   justify-content: space-between;
   white-space: nowrap;
- 
-  @include min-laptop(){
+
+  @include min-laptop() {
     align-items: end;
     margin-right: 50px;
   }
@@ -63,7 +61,6 @@
     @include laptop() {
       width: 50px;
     }
-
   }
   nav {
     display: flex;
@@ -173,15 +170,14 @@ main {
   border: 1px solid rgb(58, 57, 57);
   overflow: auto;
   height: 100vh;
-  &::-webkit-scrollbar{
-   background: black;
-   width: 7px;
+  &::-webkit-scrollbar {
+    background: black;
+    width: 7px;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background-color: rgb(55, 54, 54);
     border-radius: 10px;
   }
-
 
   header {
     border-bottom: 1px solid rgb(58, 57, 57);
@@ -233,82 +229,81 @@ main {
     }
   }
 
-  .tweets-area{
+  .tweets-area {
     display: flex;
     flex-direction: column;
-    
-   }
+  }
 }
 
-.tweet{
+.tweet {
   display: flex;
   gap: 20px;
   padding: 10px;
   border-bottom: 1px solid rgb(54, 53, 53);
-  &:hover{
-   background: rgb(27, 27, 27);
+  &:hover {
+    background: rgb(27, 27, 27);
   }
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
 
-  #profile-pic{
+  #profile-pic {
     height: 50px;
     border-radius: 50%;
   }
 
-  .body{
+  .body {
     width: 100%;
-    .user{
+    .user {
       display: flex;
       justify-content: space-between;
       gap: 10px;
-     .info{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      p{
-        font-size: small;
-        color: gray;
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p {
+          font-size: small;
+          color: gray;
+        }
       }
-     }
     }
-    .content{
-     text-decoration: none;
-     color: white;
+    .content {
+      text-decoration: none;
+      color: white;
       max-width: 600px;
       margin-top: 10px;
-      
-      p{
+
+      p {
         margin-top: 15px;
       }
-      img{
+      img {
         border-radius: 10px;
         max-height: 300px;
         width: 100%;
         object-fit: cover;
-      
+        max-width: 500px;
       }
-      video{
-       max-height: 500px;
-       border-radius: 10px;
+      video {
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 10px;
       }
     }
-    .buttons{
+    .buttons {
       display: flex;
       justify-content: space-around;
       margin-top: 20px;
       max-width: 600px;
-    
 
-      button{
+      button {
         background: none;
         display: flex;
         gap: 5px;
         color: gray;
         border-radius: 50px;
-        &:hover{
+        &:hover {
           background: rgba(128, 128, 128, 0.192);
         }
       }
@@ -316,12 +311,8 @@ main {
   }
 }
 
-
 .news {
   @include tablet() {
     display: none;
   }
- 
- 
- 
 }

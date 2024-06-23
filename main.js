@@ -91,33 +91,34 @@ const controlURL = async () => {
     // tweet detaylarini  ekrana basar
     // console.log(info);
     renderInfo(info, userName);
+  }
+  console.log(path, id);
 
-    //arama kismi
-    if (path === "?search" && id) {
-      // console.log(id);
-      // ekrana loader bas
-      renderLoader(mainEle.main);
+  //!arama kismi
+  if (path === "?search" && id) {
+    // console.log(id);
+    // ekrana loader bas
+    renderLoader(mainEle.main);
 
-      // aratilan kelime ile ilgili tweetleri getir
-      const data = await api.fetchData("/search.php", "query", id);
-      console.log(data);
+    //! aratilan kelime ile ilgili tweetleri getir
+    const data = await api.fetchData("/search.php", "query", id);
+    console.log(data.timeline);
 
-      //tweetleri ekrana bas
-      renderTimeline(null, data.timeline, mainEle.main);
-    }
+    //!tweetleri ekrana bas
+    renderTimeline(null, data.timeline, mainEle.main);
+  }
 
-    // hesap detay alani
-    if (path === "?user" && id) {
-      renderLoader(mainEle.main);
+  //! hesap detay alani
+  if (path === "?user" && id) {
+    renderLoader(mainEle.main);
 
-      const userInfo = await api.getUser(id);
-      // console.log(userInfo);
+    const userInfo = await api.getUser(id);
+    // console.log(userInfo);
 
-      renderUserPage(userInfo);
-    }
+    renderUserPage(userInfo);
 
     // kullanici twitlweini al ve ekrana bas
-    //tweetlwei gonderecegimiz yeri cagirma
+    //tweetlerini gonderecegimiz yeri cagirma
     const outlet = document.querySelector(".user-tweets");
     // console.log(outlet);
 
@@ -140,12 +141,12 @@ const controlURL = async () => {
 //arama formunun gonderilmesi
 mainEle.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  // console.dir(e.target[0].value);
+  console.dir(e.target[0].value);
   // inputun verisine erisme
   const query = e.target[0].value;
 
   // arama sayfasina url'den yonlendirme
-  // console.log(location);
+  console.log(location);
   location = `?search#${query}`;
 });
 

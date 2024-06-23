@@ -1,7 +1,7 @@
 const options = {
   method: "GET",
   headers: {
-    "x-rapidapi-key": "fc7ad7f54emsh1fe9f36c8af42e6p10c4e3jsn6f81a600f0a5",
+    "x-rapidapi-key": "3c15f96f67mshfb97b26e410f0d0p1bb736jsncbfe3e235b2c",
     "x-rapidapi-host": "twitter-api45.p.rapidapi.com",
   },
 };
@@ -41,7 +41,6 @@ export class API {
 
       // console.log(data);
       return data;
-
     } catch (err) {
       console.log(err);
     }

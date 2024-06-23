@@ -13,8 +13,8 @@ export const mainEle = {
   logoutBtn: document.querySelector("#logout-btn"),
   tweetsArea: document.querySelector(".tweets-area"),
   main: document.querySelector("main"),
-  searchForm : document.querySelector(".news form"),
-  newsArea : document.querySelector(".news-area")
+  searchForm: document.querySelector(".news form"),
+  newsArea: document.querySelector(".news-area"),
 };
 
 export const renderUserInfo = (user) => {
@@ -36,11 +36,12 @@ const getMedia = (media) => {
 
   if (media.video) {
     // diziden sadece mp4 leri al
-    const filtred = media.video[0].variants.filter((item) => item.content_type === "video/mp4")
-    // diziyi bitrate degerine gore artandan azalana siralar 
-  const sorted =  filtred.sort((a,b)=> b.bitrate - a.bitrate)
-  //  console.log(sorted);
-
+    const filtred = media.video[0].variants.filter(
+      (item) => item.content_type === "video/mp4"
+    );
+    // diziyi bitrate degerine gore artandan azalana siralar
+    const sorted = filtred.sort((a, b) => b.bitrate - a.bitrate);
+    //  console.log(sorted);
 
     return ` <video controls ><source src=${sorted[1]?.url}></video>`;
   }
@@ -48,17 +49,20 @@ const getMedia = (media) => {
 };
 
 // kullanicinin tweetlerini ekrana basma
-export const renderTimeline = (user, tweets ,outlet) => {
-//   console.log(tweets);
+export const renderTimeline = (user, tweets, outlet) => {
+  console.log(tweets);
   // console.log(user);
   moment.locale("tr");
-  let timelineHTML = tweets.map((tweet,i) => {
-    // Varsayılan kullanıcı değerlerini ayarla
-    const userAvatar = user && user.avatar ? user.avatar : `https://picsum.photos/20${i}`;
-    const userName = user && user.name ? user.name : tweet.screen_name;
-    const userProfile = user && user.profile ? user.profile : tweet.screen_name;
+  let timelineHTML = tweets
+    .map((tweet, i) => {
+      // Varsayılan kullanıcı değerlerini ayarla
+      const userAvatar =
+        user && user.avatar ? user.avatar : `https://picsum.photos/20${i}`;
+      const userName = user && user.name ? user.name : tweet.screen_name;
+      const userProfile =
+        user && user.profile ? user.profile : tweet.screen_name;
 
-    return `
+      return `
       <div class="tweet">
         <img id="profile-pic" src="${userAvatar}">
         <div class="body">
@@ -75,16 +79,24 @@ export const renderTimeline = (user, tweets ,outlet) => {
             ${getMedia(tweet.media)}
           </a>
           <div class="buttons">
-            <button><i class="bi bi-chat"></i><span>${tweet.replies}</span></button>
-            <button><i class="bi bi-recycle"></i><span>${tweet.retweets + tweet.quotes}</span></button>
-            <button><i class="bi bi-heart"></i><span>${tweet.favorites}</span></button>
-            <button><i class="bi bi-bookmark"></i><span>${tweet.bookmarks}</span></button>
+            <button><i class="bi bi-chat"></i><span>${
+              tweet.replies
+            }</span></button>
+            <button><i class="bi bi-recycle"></i><span>${
+              tweet.retweets + tweet.quotes
+            }</span></button>
+            <button><i class="bi bi-heart"></i><span>${
+              tweet.favorites
+            }</span></button>
+            <button><i class="bi bi-bookmark"></i><span>${
+              tweet.bookmarks
+            }</span></button>
           </div>
         </div>
       </div>
     `;
-  })
-  .join(" ");
+    })
+    .join(" ");
 
   outlet.innerHTML = timelineHTML;
 };
@@ -117,7 +129,7 @@ export const renderEmptyInfo = () => {
 };
 
 // tweet detayini ekrana basar
-export const renderInfo = (info,userName) => {
+export const renderInfo = (info, userName) => {
   // console.log(info);
   const html = `
     <div class="info-area"> 
@@ -172,9 +184,9 @@ export const renderInfo = (info,userName) => {
   mainEle.main.innerHTML = html;
 };
 
-// tiklanilan kullanici hakkinda bilgileri ekrana basar 
-export const renderUserPage =(user)=>{
-    mainEle.main.innerHTML = `
+// tiklanilan kullanici hakkinda bilgileri ekrana basar
+export const renderUserPage = (user) => {
+  mainEle.main.innerHTML = `
     <div class="user-page">
      <div class="top">
      <a><i class="bi bi-arrow-left"></i></a>
@@ -213,20 +225,19 @@ export const renderUserPage =(user)=>{
    
    </div>
     </div>
-    `
-
-
-}
-
+    `;
+};
 
 // taniyor olabileceklerin kismini ekrana basar
-export const renderNews = (tweets) =>{
-//  console.log(tweets.retweets);
- const tweetsArr = tweets.retweets
-//  console.log(tweetsArr);
-const filtred = tweetsArr.filter(tweet => tweet.user_id !== null)
+export const renderNews = (tweets) => {
+  //  console.log(tweets.retweets);
+  const tweetsArr = tweets.retweets;
+  //  console.log(tweetsArr);
+  const filtred = tweetsArr.filter((tweet) => tweet.user_id !== null);
 
- const box = filtred.map((item)=>  `
+  const box = filtred
+    .map(
+      (item) => `
      <li class="news-box">
           <div>
          <img src="${item.profile_image}">
@@ -237,8 +248,9 @@ const filtred = tweetsArr.filter(tweet => tweet.user_id !== null)
           <button>Takip et</button>
          </div>
         </li>
-  `).join("");
+  `
+    )
+    .join("");
 
-   mainEle.newsArea.innerHTML = box;
-
-}
+  mainEle.newsArea.innerHTML = box;
+};

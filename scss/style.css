@@ -534,8 +534,10 @@ main .tweets-area {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  max-width: 500px;
 }
 .tweet .body .content video {
+  max-width: 500px;
   max-height: 500px;
   border-radius: 10px;
 }

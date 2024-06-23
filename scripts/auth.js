@@ -32,7 +32,7 @@ const renderWarns = (nameWarning, passWarning) => {
 };
 
 // formun gonderilme olayini izler
- authEle.loginForm.addEventListener("submit", async(e) => {
+authEle.loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   let nameWarning = null;
@@ -58,52 +58,40 @@ const renderWarns = (nameWarning, passWarning) => {
   } else if (pass.length < 6) {
     passWarning = "Şifre 6 karakterden kısa olamaz";
   } else if (!pass.match(regex)) {
-    passWarning =
-      "Şifre en az 1 küçük harf, 1 büyük harf, 1 sayı, 1 özel karakter içermeli";
+    passWarning = "Şifreniz zayıf";
   } else {
     passWarning = null;
   }
 
-
-
- 
   //uyarilari ekrana bas
   renderWarns(nameWarning, passWarning);
 
   //uyari yoksa formu gonder
   if (!nameWarning && !passWarning) {
-    const userData = await api.getUser(name)
-   
-   
+    const userData = await api.getUser(name);
+
     // kullaniciyi lacal'e ekler
-    setLocal("user", userData)
+    setLocal("user", userData);
 
-
-    if(name && pass) {
+    if (name && pass) {
       Toastify({
-        text: "giris Yaptınız",
+        text: "Giriş Yaptınız",
         duration: 3000,
         close: true,
-        gravity: "bottom", 
-        position: "right", 
+        gravity: "bottom",
+        position: "right",
         stopOnFocus: true,
         style: {
           background: "linear-gradient(to right,  #5755FE,  #373A40)",
-          color:"FFF7FC"
+          color: "FFF7FC",
         },
       }).showToast();
     }
-  
+    // kullaniciyi anasayfaya yonlendirir
     setTimeout(() => {
       window.location = "/";
     }, 3000);
-
-    // kullaniciyi anasayfaya yonlendirir
-       
-        
   }
-
-
 });
 
 console.log(window.location);
